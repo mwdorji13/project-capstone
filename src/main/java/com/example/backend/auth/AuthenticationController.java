@@ -1,10 +1,7 @@
 package com.example.backend.auth;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,12 +10,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 
 public class AuthenticationController {
-	
-	
+
+
 	private final AuthenticationService service;
-	
-	
-	
+
+
 	@PostMapping("/register")
 	public ResponseEntity<AuthenticationResponse> register(
 			@RequestBody RegisterRequest request
@@ -31,5 +27,7 @@ public class AuthenticationController {
 			){
 		return ResponseEntity.ok(service.authenticate(request));
 	}
+
+
 }
 

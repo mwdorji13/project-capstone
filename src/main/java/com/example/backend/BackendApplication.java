@@ -12,7 +12,7 @@ public class BackendApplication {
 	
 	@RequestMapping(value="/")
 	public String index() {
-		return "<h1>Hello<h1>";
+		return "<h1>Hellos<h1>";
 	}
 
 	public static void main(String[] args) {

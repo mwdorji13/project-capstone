@@ -68,8 +68,7 @@ public class JwtService {
 	}
 	private Key getSignInKey() {
 		// TODO Auto-generated method stub
-		byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
-		return Keys.hmacShaKeyFor(keyBytes);
+		return Keys.secretKeyFor(SignatureAlgorithm.HS256);
 	}
 
 }
